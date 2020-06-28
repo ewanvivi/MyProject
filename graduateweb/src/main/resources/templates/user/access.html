@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Elen - Free Bootstrap 4 Template by Colorlib</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700" rel="stylesheet">
+
+    <link rel="stylesheet" href="/userinfo/css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="/userinfo/css/animate.css">
+
+    <link rel="stylesheet" href="/userinfo/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/userinfo/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="/userinfo/css/magnific-popup.css">
+
+    <link rel="stylesheet" href="/userinfo/css/aos.css">
+
+    <link rel="stylesheet" href="/userinfo/css/ionicons.min.css">
+
+    <link rel="stylesheet" href="/userinfo/css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="/userinfo/css/jquery.timepicker.css">
+
+
+    <link rel="stylesheet" href="/userinfo/css/flaticon.css">
+    <link rel="stylesheet" href="/userinfo/css/icomoon.css">
+    <link rel="stylesheet" href="/userinfo/css/style.css">
+</head>
+<body>
+<input type="hidden" id="userid" th:attr="temp=${session.user.id}">
+<div id="colorlib-page">
+    <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
+    <aside id="colorlib-aside" role="complementary" class="js-fullheight text-center">
+
+        <h1 id="colorlib-logo"><a href="/homepage" style="color:lightsalmon">回到论文首页</a></h1>
+        <nav id="colorlib-main-menu" role="navigation">
+            <ul>
+                <li><a href="#" id="userinfoHome">个人信息</a></li>
+                <li><a href="#" id="editUserinfo">修改信息</a></li>
+                <li class="colorlib-active"><a href="/user/gotoAccessGraduate">发表的论文</a></li>
+                <li><a href="/user/gotoEnshrine">收藏的论文</a></li>
+                <li><a href="#">关于我们</a></li>
+            </ul>
+        </nav>
+
+        <div class="colorlib-footer">
+            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                Copyright&copy;<script>document.write(new Date().getFullYear());</script>
+                All rights reserved 辛纪元,张林文,邓云涛
+        </div>
+    </aside> <!-- END COLORLIB-ASIDE -->
+    <div id="colorlib-main">
+        <section th:if="${msg!=null}" class="home-slider js-fullheight owl-carousel">
+        <div class="slider-item js-fullheight"  style="background-image:url(/userinfo/images/bg_2.jpg);">
+            <div class="overlay"></div>
+            <div class="container-fluid">
+                <div class="row no-gutters slider-text slider-text-2 js-fullheight align-items-center justify-content-center" data-scrollax-parent="true">
+                    <div class="col-md-10 text-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
+                        <h1 class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">您没有发表任何论文</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slider-item js-fullheight" style="background-image:url(/userinfo/images/bg_3.jpg);">
+            <div class="overlay"></div>
+            <div class="container-fluid">
+                <div class="row no-gutters slider-text slider-text-2 js-fullheight align-items-center justify-content-center" data-scrollax-parent="true">
+                    <div class="col-md-10 text-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
+                        <h1 class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">您没有发表任何论文</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+        <section th:if="${msg==null}" class="ftco-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="row" th:if="${accessOverpapers!=null}">
+                            <div class="col-md-12"  th:each="accessOverpaper:${accessOverpapers.list}">
+                                <div class="blog-entry ftco-animate" th:if="${accessOverpaper!=null}">
+                                    <a href="#" class="img"
+                                       th:style="'background-image:url('+${accessOverpaper.image}"></a>
+                                    <div class="text pt-2 mt-3">
+					          	<span class="category mb-1 d-block"><a href="#" style="font-size: 19px"
+                                                                       th:text="${accessOverpaper.levelName}"></a>
+									<p style="display: inline-block;margin-left: 420px;font-size: 15px"
+                                       th:text="'指导老师:'+${accessOverpaper.teacherName}"></p>
+									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									<p style="display: inline-block;font-size: 15px"
+                                       th:text="'分数:'+${accessOverpaper.grade}"></p>
+								</span>
+                                        <h3 class="mb-4"><a href="#" th:text="${accessOverpaper.createTitle}"></a></h3>
+                                        <p class="mb-4" th:text="${accessOverpaper.intro}"></p>
+                                        <div class="meta-wrap d-md-flex align-items-center">
+                                            <div class="half order-md-last text-md-right">
+                                                <p class="meta">
+                                                    <i class="icon ion-ios-clock"></i><span
+                                                        th:text="${accessOverpaper.createtime}"></span>
+                                                    <i class="icon-heart"></i><span
+                                                        th:text="${accessOverpaper.seeCount}"></span>
+                                                    <i class="icon-eye"></i><span
+                                                        th:text="${accessOverpaper.likeCount}"></span>
+                                                </p>
+                                            </div>
+                                            <div class="half">
+                                                <p>
+                                                    <a th:href="@{'/all/selectGraduationById?id='+${accessOverpaper.getId()}}"
+                                                       class="btn btn-primary p-3 px-xl-4 py-xl-3">前去查看</a></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row mt-5">
+                            <div class="col">
+                                <div class="block-27">
+                                    <ul th:if="${accessOverpapers!=null}">
+                                        <li><a th:if="${accessOverpapers.hasPreviousPage==true}"
+                                               th:href="@{'/user/gotoAccessGraduate?pn='+${accessOverpapers.pageNum-1}}"
+                                               href="#">&lt;</a></li>
+                                        <li th:each="navigatePage:${accessOverpapers.navigatepageNums}" class="active">
+                                            <a th:href="@{'/user/gotoAccessGraduate?pn='+${navigatePage}}">
+                                                <span th:text="${navigatePage}">  </span></a>
+                                        </li>
+                                        <li><a th:if="${accessOverpapers.hasNextPage==true}"
+                                               th:href="@{'/user/gotoAccessGraduate?pn='+${accessOverpapers.pageNum+1}}"
+                                               href="#">&gt;</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- END-->
+                    <div th:if="${msg==null}" class="col-lg-4 sidebar ftco-animate">
+
+                        <div class="sidebar-box ftco-animate">
+                            <h3 class="sidebar-heading">以发布论文(随机五篇)</h3>
+                            <div class="block-21 mb-4 d-flex" th:each="random:${randomoverPapers}">
+                                <a class="blog-img mr-4" th:href="@{'/all/selectGraduationById?id='+${random.id}}" th:style="'background-image:url('+${random.image}"></a>
+                                <div class="text">
+                                    <h3 class="heading"><a th:href="@{'/all/selectGraduationById?id='+${random.id}}" th:text="${random.createTitle}"></a></h3>
+                                    <div class="meta">
+                                        <div><span class="icon-calendar"></span> <a href="#"
+                                                                                    th:text="${random.createtime}"></a>
+                                        </div>
+                                        <div><span class="icon-person"></span><a href="#"
+                                                                                 th:text="${random.createName}"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+                    </div><!-- END COL -->
+                </div>
+            </div>
+        </section>
+    </div><!-- END COLORLIB-MAIN -->
+</div><!-- END COLORLIB-PAGE -->
+
+<!-- loader -->
+<div id="ftco-loader" class="show fullscreen">
+    <svg class="circular" width="48px" height="48px">
+        <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/>
+        <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+                stroke="#F96D00"/>
+    </svg>
+</div>
+
+<script src="/userinfo/js/jquery.min.js"></script>
+<script src="/userinfo/js/jquery-migrate-3.0.1.min.js"></script>
+<script src="/userinfo/js/popper.min.js"></script>
+<script src="/userinfo/js/bootstrap.min.js"></script>
+<script src="/userinfo/js/jquery.easing.1.3.js"></script>
+<script src="/userinfo/js/jquery.waypoints.min.js"></script>
+<script src="/userinfo/js/jquery.stellar.min.js"></script>
+<script src="/userinfo/js/owl.carousel.min.js"></script>
+<script src="/userinfo/js/jquery.magnific-popup.min.js"></script>
+<script src="/userinfo/js/aos.js"></script>
+<script src="/userinfo/js/jquery.animateNumber.min.js"></script>
+<script src="/userinfo/js/bootstrap-datepicker.js"></script>
+<script src="/userinfo/js/scrollax.min.js"></script>
+<script src="/userinfo/js/main.js"></script>
+
+<script>
+    var userId = $("#userid").attr("temp");
+    $("#userinfoHome").click(function () {
+        location.href = "/user/userinfo?id=" + userId;
+    })
+
+    $("#editUserinfo").click(function () {
+        location.href = "/user/gotoEditUserinfo";
+    })
+
+</script>
+</body>
+</html>

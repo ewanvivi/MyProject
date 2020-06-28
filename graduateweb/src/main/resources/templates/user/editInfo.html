@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Elen - Free Bootstrap 4 Template by Colorlib</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700" rel="stylesheet">
+
+    <link rel="stylesheet" href="/userinfo/css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="/userinfo/css/animate.css">
+
+    <link rel="stylesheet" href="/userinfo/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/userinfo/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="/userinfo/css/magnific-popup.css">
+
+    <link rel="stylesheet" href="/userinfo/css/aos.css">
+
+    <link rel="stylesheet" href="/userinfo/css/ionicons.min.css">
+
+    <link rel="stylesheet" href="/userinfo/css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="/userinfo/css/jquery.timepicker.css">
+
+
+    <link rel="stylesheet" href="/userinfo/css/flaticon.css">
+    <link rel="stylesheet" href="/userinfo/css/icomoon.css">
+    <link rel="stylesheet" href="/userinfo/css/style.css">
+</head>
+<body>
+<input type="hidden" id="userid" th:attr="temp=${session.user.id}">
+<div id="colorlib-page">
+    <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
+    <aside id="colorlib-aside" role="complementary" class="js-fullheight text-center">
+
+        <h1 id="colorlib-logo"><a href="/homepage" style="color:lightsalmon">回到论文首页</a></h1>
+        <nav id="colorlib-main-menu" role="navigation">
+            <ul>
+                <li><a href="#"  id="userinfoHome">个人信息</a></li>
+                <li  class="colorlib-active"><a href="#" id="editUserinfo">修改信息</a></li>
+                <li><a href="/user/gotoAccessGraduate">发表的论文</a></li>
+                <li><a href="/user/gotoEnshrine">收藏的论文</a></li>
+                <li><a href="#">关于我们</a></li>
+            </ul>
+        </nav>
+
+        <div class="colorlib-footer">
+            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                Copyright&copy;<script>document.write(new Date().getFullYear());</script>
+                All rights reserved 辛纪元,张林文,邓云涛
+        </div>
+    </aside> <!-- END COLORLIB-ASIDE -->
+
+    <div id="colorlib-main">
+        <div class="hero-wrap js-fullheight" style="background-image: url(/userinfo/images/bg_1.jpg);" data-stellar-background-ratio="0.5">
+        <section class="ftco-section contact-section">
+            <div class="container">
+                <div class="row d-flex mb-5 contact-info">
+                    <div class="col-md-12 mb-4">
+                        <h2 class="h4 font-weight-bold" style="float:right;margin-right: 576px;">修改个人信息</h2>
+                    </div>
+                    <div class="w-100"></div>
+					<div class="col-md-3">
+					</div>
+                </div>
+                <div class="row block-9">
+                    <div class="col-md-6 order-md-last pr-md-5">
+						<div class="form-group">
+							<input type="text" id="newNickname" th:value="${session.user.nickname}" class="form-control"
+								   placeholder="Your Name">
+						</div>
+						<div class="form-group">
+							<input type="text" id="newPassword" th:value="${session.user.password}" class="form-control"
+								   placeholder="Your Email">
+						</div>
+						<div class="form-group">
+							<input type="text" id="newAge" th:value="${session.user.age}" class="form-control"
+								   placeholder="Your Email">
+						</div>
+                        <div class="form-group">
+                            <input type="text" id="newWorkposition" th:value="${session.user.workposition}" class="form-control"
+                                   placeholder="Your Email">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="newPhone" th:value="${session.user.phone}" class="form-control"
+                                   placeholder="你的电话">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="newQq" th:value="${session.user.qq}" class="form-control"
+                                   placeholder="你的qq">
+                        </div>
+						<div class="form-group">
+                                <textarea id="newSelfIntroduce" th:text="${session.user.selfIntroduction}" cols="30" rows="7"
+										  class="form-control"
+										  placeholder="Message"></textarea>
+						</div>
+
+                    </div>
+
+                    <div class="col-md-6">
+						<div class="form-group">
+							<input  style="border: none;background:none !important" id="oldNickname" type="text" th:value="'名称:     '+${session.user.nickname}" class="form-control"
+								   placeholder="Your Name">
+						</div>
+						<div class="form-group" style="border: none">
+							<input  style="border: none;background:none !important" id="oldPassword" type="text" th:value="'密码:     '+${session.user.password}" class="form-control"
+								   placeholder="Your Password">
+						</div>
+						<div class="form-group" style="border: none">
+							<input  style="border: none;background:none !important" id="oldAge" type="text" th:value="'年龄:     '+${session.user.age}" class="form-control"
+								   placeholder="Your Age">
+						</div>
+                        <div class="form-group" style="border: none">
+                            <input  style="border: none;background:none !important" id="oldWorkposition" type="text" th:value="'个人标签:     '+${session.user.workposition}" class="form-control"
+                                    placeholder="Your workposition">
+                        </div>
+                        <div class="form-group" style="border: none">
+                            <input  style="border: none;background:none !important;display: inline;width: 200px" id="oldPhone" type="text" th:value="'电话:     '+${session.user.phone}" class="form-control"
+                                    placeholder="Your Phone">
+                            <span>
+                                <select id="phoneIsvisible">
+                                    <option th:selected="${session.user.phoneisvisible==1}">可见</option>
+                                    <option th:selected="${session.user.phoneisvisible==0}">不可见</option>
+                                </select>
+                            </span>
+                        </div>
+                        <div class="form-group" style="border: none">
+                            <input  style="border: none;background:none !important;display: inline;width: 200px" id="oldQq" type="text" th:value="'qq:     '+${session.user.qq}" class="form-control"
+                                    placeholder="Your qq">
+                            <span>
+                                <select id="qqIsvisible">
+                                    <option  th:selected="${session.user.qqisvisible==1}">可见</option>
+                                    <option  th:selected="${session.user.qqisvisible==0}">不可见</option>
+                                </select>
+                            </span>
+                        </div>
+						<div class="form-group" style="border: none">
+                                <textarea id="oldSelfIntroduce" style="border: none;;background:none !important" th:text="'个人介绍:     '+${session.user.selfIntroduction}" cols="30" rows="7"
+										  class="form-control"
+										  placeholder="selfIntroduction"></textarea>
+						</div>
+                    </div>
+                </div>
+
+                <input  id="submit" style="margin-left:340px;margin-top:25px;" value="提交并修改" class="btn btn-primary py-3 px-5">
+
+            </div>
+        </section>
+        </div>
+    </div><!-- END COLORLIB-MAIN -->
+</div><!-- END COLORLIB-PAGE -->
+
+<!-- loader -->
+<div id="ftco-loader" class="show fullscreen">
+    <svg class="circular" width="48px" height="48px">
+        <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/>
+        <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+                stroke="#F96D00"/>
+    </svg>
+</div>
+
+
+<script src="/userinfo/js/jquery.min.js"></script>
+<script src="/userinfo/js/jquery-migrate-3.0.1.min.js"></script>
+<script src="/userinfo/js/popper.min.js"></script>
+<script src="/userinfo/js/bootstrap.min.js"></script>
+<script src="/userinfo/js/jquery.easing.1.3.js"></script>
+<script src="/userinfo/js/jquery.waypoints.min.js"></script>
+<script src="/userinfo/js/jquery.stellar.min.js"></script>
+<script src="/userinfo/js/owl.carousel.min.js"></script>
+<script src="/userinfo/js/jquery.magnific-popup.min.js"></script>
+<script src="/userinfo/js/aos.js"></script>
+<script src="/userinfo/js/jquery.animateNumber.min.js"></script>
+<script src="/userinfo/js/bootstrap-datepicker.js"></script>
+<script src="/userinfo/js/scrollax.min.js"></script>
+<script src="/userinfo/js/main.js"></script>
+
+<script>
+    var Userid = $("#userid").attr("temp");
+    //老的
+    var oldNickname = $("#oldNickname").val();
+    var oldPassword = $("#oldPassword").val();
+    var oldAge = $("#oldAge").val();
+    var oldSelfIntroduce = $("#oldSelfIntroduce").val();
+
+
+
+    //去到主页
+    $("#userinfoHome").click(function(){
+        location.href="/user/userinfo?id="+Userid;
+    })
+
+
+    $("#submit").click(function(){
+        var newnickname = $("#newNickname").val();
+        var newPassword = $("#newPassword").val();
+        var newAge = $("#newAge").val();
+        var newSelfIntroduce = $("#newSelfIntroduce").val();
+        var newWorkposition=$("#newWorkposition").val();
+        var newPhone=$("#newPhone").val();
+        var newQq=$("#newQq").val();
+        var tempqqisvisible = $("#qqIsvisible option:selected").val();
+        var tempphoneisvisible = $("#phoneIsvisible option:selected").val();
+        var phoneisvisible='';
+        var qqisvisible='';
+        console.log(tempqqisvisible);
+        console.log(tempphoneisvisible);
+        if (tempphoneisvisible=='不可见'){
+            phoneisvisible=0
+        }else if(tempphoneisvisible=='可见'){
+            phoneisvisible=1
+        }
+        if (tempqqisvisible=='不可见'){
+            qqisvisible=0
+        }else if(tempqqisvisible=='可见'){
+            qqisvisible=1
+        }
+        console.log(qqisvisible)
+        console.log(phoneisvisible)
+       $.ajax({
+           url:"/user/editUserinfo",
+           type:"get",
+           data:{
+               "id":Userid,
+               "nickname":newnickname,
+               "password":newPassword,
+               "age":newAge,
+               "selfIntroduction":newSelfIntroduce,
+               "workposition":newWorkposition,
+               "phone":newPhone,
+               "qq":newQq,
+               "qqisvisible":qqisvisible,
+               "phoneisvisible":phoneisvisible
+           },
+           success:function(data){
+               console.log(data);
+               location.href="/homepage";
+           }
+       })
+    })
+
+</script>
+</body>
+</html>

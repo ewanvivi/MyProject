@@ -1,0 +1,16 @@
+server:
+  port: 8888
+spring:
+  datasource:
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/school?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8
+  redis:
+    host: 192.168.47.149
+    database: 0
+    port: 6379
+mybatis:
+  mapper-locations: classpath:xml/*.xml
+  configuration:
+    map-underscore-to-camel-case: true

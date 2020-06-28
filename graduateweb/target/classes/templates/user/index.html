@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Elen - Free Bootstrap 4 Template by Colorlib</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700" rel="stylesheet">
+
+    <link rel="stylesheet" href="/userinfo/css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="/userinfo/css/animate.css">
+    
+    <link rel="stylesheet" href="/userinfo/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/userinfo/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="/userinfo/css/magnific-popup.css">
+
+    <link rel="stylesheet" href="/userinfo/css/aos.css">
+
+    <link rel="stylesheet" href="/userinfo/css/ionicons.min.css">
+
+    <link rel="stylesheet" href="/userinfo/css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="/userinfo/css/jquery.timepicker.css">
+
+    
+    <link rel="stylesheet" href="/userinfo/css/flaticon.css">
+    <link rel="stylesheet" href="/userinfo/css/icomoon.css">
+    <link rel="stylesheet" href="/userinfo/css/style.css">
+  </head>
+  <body>
+    <input type="hidden" id="userid" th:attr="temp=${session.user.id}">
+	<div id="colorlib-page">
+		<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
+		<aside id="colorlib-aside" role="complementary" class="js-fullheight text-center">
+			<h1 id="colorlib-logo" ><a href="/homepage" style="color:lightsalmon">回到论文首页</a></h1>
+			<nav id="colorlib-main-menu" role="navigation">
+				<ul>
+					<li class="colorlib-active"><a href="#"  id="userinfoHome">个人信息</a></li>
+					<li><a href="#" id="editUserinfo">修改信息</a></li>
+                    <li><a href="/user/gotoAccessGraduate">发表的论文</a></li>
+					<li><a href="/user/gotoEnshrine">收藏的论文</a></li>
+					<li><a href="#">关于我们</a></li>
+				</ul>
+			</nav>
+
+			<div class="colorlib-footer">
+				<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+			  Copyright&copy;<script>document.write(new Date().getFullYear());</script>All rights reserved 辛纪元,张林文,邓云涛
+			</div>
+		</aside> <!-- END COLORLIB-ASIDE -->
+		<div id="colorlib-main">
+
+			<div class="hero-wrap js-fullheight" style="background-image: url(/userinfo/images/bg_1.jpg)" data-stellar-background-ratio="0.5">
+				<div class="overlay"></div>
+				<div class="js-fullheight d-flex justify-content-center align-items-center">
+					<div class="col-md-8 text text-center">
+                        <form action="/user/fileUpload" method="post" enctype="multipart/form-data">
+                            <span>修改图片: <input type="file" name="fileName"/></span>
+                            <span><input type="submit" value="提交"/></span>
+                        </form>
+						<div class="img mb-4" th:style="'background-image:url('+${session.user.image}" ></div>
+						<div class="desc">
+							<h1 class="mb-4" th:text="${session.user.nickname}"></h1>
+							<p class="mb-4" th:text="${session.user.selfIntroduction}"></p>
+<!--							<p><a href="#"  class="btn-custom">更多信息<span class="ion-ios-arrow-forward"></span></a></p>-->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div><!-- END COLORLIB-MAIN -->
+	</div><!-- END COLORLIB-PAGE -->
+
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+
+  <script src="/userinfo/js/jquery.min.js"></script>
+  <script src="/userinfo/js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="/userinfo/js/popper.min.js"></script>
+  <script src="/userinfo/js/bootstrap.min.js"></script>
+  <script src="/userinfo/js/jquery.easing.1.3.js"></script>
+  <script src="/userinfo/js/jquery.waypoints.min.js"></script>
+  <script src="/userinfo/js/jquery.stellar.min.js"></script>
+  <script src="/userinfo/js/owl.carousel.min.js"></script>
+  <script src="/userinfo/js/jquery.magnific-popup.min.js"></script>
+  <script src="/userinfo/js/aos.js"></script>
+  <script src="/userinfo/js/jquery.animateNumber.min.js"></script>
+  <script src="/userinfo/js/bootstrap-datepicker.js"></script>
+  <script src="/userinfo/js/scrollax.min.js"></script>
+  <script src="/userinfo/js/main.js"></script>
+    <script>
+        var userId = $("#userid").attr("temp");
+		$("#userinfoHome").click(function(){
+			location.href="/user/userinfo?id="+userId;
+		})
+
+        $("#editUserinfo").click(function(){
+            location.href="/user/gotoEditUserinfo";
+        })
+
+	</script>
+  </body>
+</html>

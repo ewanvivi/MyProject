@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="51e5ed09-0ce7-402c-9523-3198a6783da7" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="MAKE_PROJECT_ON_SAVE" value="true" />
+    <option name="PARALLEL_COMPILATION" value="true" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="school" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="HTML File" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="D:\software\apache-maven-3.6.3\myrepository" />
+        <option name="mavenHome" value="D:/software/apache-maven-3.6.3" />
+        <option name="userSettingsFile" value="D:\software\apache-maven-3.6.3\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="downloadAnnotationsAutomatically" value="true" />
+        <option name="downloadDocsAutomatically" value="true" />
+        <option name="downloadSourcesAutomatically" value="true" />
+        <option name="vmOptionsForImporter" value="-Xmx768m" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1cqbLp6qTi1QM5wyDoRfcxXEL9p" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="jdk.selected.JAVA_MODULE" value="1.8" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/graduateweb/src/main/resources/templates/user" />
+    <property name="project.structure.last.edited" value="Problems" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\IDEA\IntelliJ IDEA 2019.3.1\mywork\project\school\graduateweb\src\main\resources\templates\user" />
+      <recent name="D:\IDEA\IntelliJ IDEA 2019.3.1\mywork\project\school\graduateweb\src\main\resources\templates\admin" />
+      <recent name="D:\IDEA\IntelliJ IDEA 2019.3.1\mywork\project\school\graduateweb\src\main\resources\static\userinfo\images" />
+      <recent name="D:\IDEA\IntelliJ IDEA 2019.3.1\mywork\project\school\graduateweb\src\main\resources\templates\addGraduate" />
+      <recent name="D:\IDEA\IntelliJ IDEA 2019.3.1\mywork\project\school\graduateweb\src\main\resources\static\publish\images\ad" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.xjy.graduateweb.controller" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\IDEA\IntelliJ IDEA 2019.3.1\mywork\project\school\graduateweb\src\main\resources\templates\user" />
+      <recent name="D:\IDEA\IntelliJ IDEA 2019.3.1\mywork\project\school\graduateweb\src\main\resources\templates\userlogin" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.GraduatewebApplication">
+    <configuration name="GraduatewebApplicationTests.contextLoads" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="graduateweb" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.xjy.graduateweb.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.xjy.graduateweb" />
+      <option name="MAIN_CLASS_NAME" value="com.xjy.graduateweb.GraduatewebApplicationTests" />
+      <option name="METHOD_NAME" value="contextLoads" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GraduateApiApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="graduate-api" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.xjy.graduate.graduateapi.GraduateApiApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GraduatewebApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="graduateweb" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.xjy.graduateweb.GraduatewebApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SchoolApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="school" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.xjy.graduate.school.SchoolApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
+      <deployment />
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="_Default_(Template)_Project" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="javadebug" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.GraduatewebApplicationTests.contextLoads" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="51e5ed09-0ce7-402c-9523-3198a6783da7" name="Default Changelist" comment="" />
+      <created>1591259017796</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1591259017796</updated>
+      <workItem from="1591259020170" duration="16238000" />
+      <workItem from="1591317788004" duration="11163000" />
+      <workItem from="1591336965970" duration="14804000" />
+      <workItem from="1591362912982" duration="287000" />
+      <workItem from="1591363435868" duration="3384000" />
+      <workItem from="1591490523336" duration="6293000" />
+      <workItem from="1591497823169" duration="16501000" />
+      <workItem from="1591514890835" duration="4576000" />
+      <workItem from="1591521327893" duration="599000" />
+      <workItem from="1591524545480" duration="14037000" />
+      <workItem from="1591576805001" duration="22580000" />
+      <workItem from="1591616530498" duration="4383000" />
+      <workItem from="1591624674548" duration="3392000" />
+      <workItem from="1591663401598" duration="23868000" />
+      <workItem from="1591694474032" duration="14000" />
+      <workItem from="1591749326276" duration="9301000" />
+      <workItem from="1591759226142" duration="17679000" />
+      <workItem from="1591836199593" duration="20944000" />
+      <workItem from="1591874907079" duration="6719000" />
+      <workItem from="1591923316033" duration="5431000" />
+      <workItem from="1592147974219" duration="334000" />
+      <workItem from="1592188466504" duration="17214000" />
+      <workItem from="1592268180113" duration="10532000" />
+      <workItem from="1592288509100" duration="1908000" />
+      <workItem from="1592354556100" duration="1568000" />
+      <workItem from="1592384276657" duration="644000" />
+      <workItem from="1592468756641" duration="1873000" />
+      <workItem from="1592635072878" duration="174000" />
+      <workItem from="1593138111234" duration="165000" />
+      <workItem from="1593222667704" duration="545000" />
+      <workItem from="1593248298518" duration="11377000" />
+      <workItem from="1593262051223" duration="1125000" />
+      <workItem from="1593269425447" duration="1126000" />
+      <workItem from="1593301162060" duration="8302000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="574" y="129" key="#com.intellij.ide.util.MemberChooser" timestamp="1593256747913">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="574" y="129" key="#com.intellij.ide.util.MemberChooser/0.0.1536.834@0.0.1536.834" timestamp="1593256747913" />
+    <state x="355" y="350" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1591881840557">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="355" y="350" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1536.834@0.0.1536.834" timestamp="1591881840557" />
+    <state x="932" y="179" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1591692322871">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="932" y="179" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.834@0.0.1536.834" timestamp="1591692322871" />
+    <state width="416" height="466" key="DebuggerActiveHint" timestamp="1593307523466">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="416" height="466" key="DebuggerActiveHint/0.0.1536.834@0.0.1536.834" timestamp="1593307523466" />
+    <state width="1493" height="232" key="GridCell.Tab.0.bottom" timestamp="1593311192241">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="232" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1593311192241" />
+    <state width="1493" height="232" key="GridCell.Tab.0.center" timestamp="1593311192241">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="232" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1593311192241" />
+    <state width="1493" height="232" key="GridCell.Tab.0.left" timestamp="1593311192241">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="232" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1593311192241" />
+    <state width="1493" height="232" key="GridCell.Tab.0.right" timestamp="1593311192241">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="232" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1593311192241" />
+    <state width="1493" height="232" key="GridCell.Tab.1.bottom" timestamp="1593311192242">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="232" key="GridCell.Tab.1.bottom/0.0.1536.834@0.0.1536.834" timestamp="1593311192242" />
+    <state width="1493" height="232" key="GridCell.Tab.1.center" timestamp="1593311192241">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="232" key="GridCell.Tab.1.center/0.0.1536.834@0.0.1536.834" timestamp="1593311192241" />
+    <state width="1493" height="232" key="GridCell.Tab.1.left" timestamp="1593311192241">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="232" key="GridCell.Tab.1.left/0.0.1536.834@0.0.1536.834" timestamp="1593311192241" />
+    <state width="1493" height="232" key="GridCell.Tab.1.right" timestamp="1593311192241">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="232" key="GridCell.Tab.1.right/0.0.1536.834@0.0.1536.834" timestamp="1593311192241" />
+    <state width="1493" height="206" key="GridCell.Tab.2.bottom" timestamp="1593311000156">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="206" key="GridCell.Tab.2.bottom/0.0.1536.834@0.0.1536.834" timestamp="1593311000156" />
+    <state width="1493" height="206" key="GridCell.Tab.2.center" timestamp="1593311000155">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="206" key="GridCell.Tab.2.center/0.0.1536.834@0.0.1536.834" timestamp="1593311000155" />
+    <state width="1493" height="206" key="GridCell.Tab.2.left" timestamp="1593311000155">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="206" key="GridCell.Tab.2.left/0.0.1536.834@0.0.1536.834" timestamp="1593311000155" />
+    <state width="1493" height="206" key="GridCell.Tab.2.right" timestamp="1593311000156">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="206" key="GridCell.Tab.2.right/0.0.1536.834@0.0.1536.834" timestamp="1593311000156" />
+    <state x="793" y="111" key="Registry" timestamp="1591271385610">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="793" y="111" key="Registry/0.0.1536.834@0.0.1536.834" timestamp="1591271385610" />
+    <state x="302" y="56" key="SettingsEditor" timestamp="1591758594255">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="302" y="56" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1591758594255" />
+    <state width="498" height="446" key="SwitcherDM" timestamp="1591498729935">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="498" height="446" key="SwitcherDM/0.0.1536.834@0.0.1536.834" timestamp="1591498729935" />
+    <state x="359" y="24" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1591839692019">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="359" y="24" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1536.834@0.0.1536.834" timestamp="1591839692019" />
+    <state x="472" y="180" width="592" height="474" key="find.popup" timestamp="1591341757814">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="472" y="180" width="592" height="474" key="find.popup/0.0.1536.834@0.0.1536.834" timestamp="1591341757814" />
+    <state x="176" y="102" key="new project wizard" timestamp="1591259804496">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="176" y="102" key="new project wizard/0.0.1536.834@0.0.1536.834" timestamp="1591259804496" />
+    <state x="511" y="55" key="refactoring.ChangeSignatureDialog" timestamp="1593254947468">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="511" y="55" key="refactoring.ChangeSignatureDialog/0.0.1536.834@0.0.1536.834" timestamp="1593254947468" />
+    <state x="425" y="189" width="672" height="677" key="run.anything.popup" timestamp="1591672042195">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="425" y="189" width="672" height="677" key="run.anything.popup/0.0.1536.834@0.0.1536.834" timestamp="1591672042195" />
+    <state x="476" y="154" width="672" height="678" key="search.everywhere.popup" timestamp="1593249784822">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="476" y="154" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1593249784822" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/graduateweb/src/main/java/com/xjy/graduateweb/controller/ManagerController.java</url>
+          <line>51</line>
+          <option name="timeStamp" value="51" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/graduateweb/src/main/java/com/xjy/graduateweb/controller/ManagerController.java</url>
+          <line>68</line>
+          <option name="timeStamp" value="52" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/graduateweb/src/main/java/com/xjy/graduateweb/controller/ManagerController.java</url>
+          <line>60</line>
+          <option name="timeStamp" value="53" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/graduateweb/src/main/java/com/xjy/graduateweb/controller/ManagerController.java</url>
+          <line>45</line>
+          <option name="timeStamp" value="55" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/graduateweb/src/main/java/com/xjy/graduateweb/controller/ManagerController.java</url>
+          <line>59</line>
+          <option name="timeStamp" value="56" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="SpringBootApplicationConfigurationType">
+        <watch expression="list.get(0)" />
+      </configuration>
+    </watches-manager>
+  </component>
+</project>

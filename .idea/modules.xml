@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/graduate-api/graduate-api.iml" filepath="$PROJECT_DIR$/graduate-api/graduate-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/graduateweb/graduateweb.iml" filepath="$PROJECT_DIR$/graduateweb/graduateweb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/school.iml" filepath="$PROJECT_DIR$/school.iml" />
+    </modules>
+  </component>
+</project>

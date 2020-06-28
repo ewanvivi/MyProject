@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    <title>论文管理系统</title>
+    <link rel="icon" href="/houduan/favicon.ico" type="image/ico">
+    <meta name="keywords" content="LightYear,光年,后台模板,后台管理系统,光年HTML模板">
+    <meta name="description" content="LightYear是一个基于Bootstrap v3.3.7的后台管理系统的HTML模板。">
+    <meta name="author" content="yinqi">
+    <link href="/houduan/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/houduan/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="/houduan/css/style.min.css" rel="stylesheet">
+</head>
+
+<body>
+<input type="hidden" id="userid" th:attr="temp=${session.user.id}">
+<div class="lyear-layout-web">
+    <div class="lyear-layout-container">
+        <!--左侧导航-->
+        <aside class="lyear-layout-sidebar">
+
+            <!-- logo -->
+            <div id="logo" class="sidebar-header">
+                <a href="#"><img src="/houduan/images/1.png" title="LightYear" alt="LightYear"/></a>
+            </div>
+            <div class="lyear-layout-sidebar-scroll">
+
+                <nav class="sidebar-main">
+                    <ul class="nav nav-drawer">
+                        <li class="nav-item"><a href="/homepage"><i class="mdi mdi-home"></i> 前端首页</a></li>
+                        <li class="nav-item nav-item-has-subnav active open">
+                            <a href="javascript:void(0)"><i class="mdi mdi-file-outline"></i> 示例页面</a>
+                            <ul class="nav nav-subnav">
+                                <li ><a href="/manager/page/info">论文列表</a></li>
+                                <li class="active"><a href="#">待审核论文</a></li>
+                                <li><a href="/manager/page/access">论文终审</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+        </aside>
+        <!--End 左侧导航-->
+
+        <!--头部信息-->
+        <header class="lyear-layout-header">
+
+            <nav class="navbar navbar-default">
+                <div class="topbar">
+
+                    <ul class="topbar-right" style="float: right;margin-left:1470px ">
+                        <li class="dropdown dropdown-profile">
+                            <a href="javascript:void(0)" data-toggle="dropdown">
+                                <img class="img-avatar img-avatar-48 m-r-10" th:src="${session.user.image}"/>
+                                <span th:text="${session.user.nickname}"> <span class="caret"></span></span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-right">
+                                <li><a href="#" id="gotoUserinfo"><i class="mdi mdi-account"></i> 个人信息</a></li>
+                                <li><a href="#" id="loginout"><i class="mdi mdi-logout-variant"></i> 退出登录</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+        </header>
+        <!--End 头部信息-->
+
+        <!--页面主要内容-->
+        <main class="lyear-layout-content">
+
+            <div class="container-fluid">
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-toolbar clearfix">
+                                <form class="pull-right search-bar" method="get" action="#!" role="form">
+                                    <div class="input-group">
+                                        <div class="input-group-btn">
+                                            <input type="hidden" name="search_field" id="search-field" value="title">
+                                            <button class="btn btn-default dropdown-toggle" id="search-btn"
+                                                    data-toggle="dropdown" type="button" aria-haspopup="true"
+                                                    aria-expanded="false">
+                                                标题 <span class="caret"></span>
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li><a tabindex="-1" href="javascript:void(0)" data-field="title">标题</a>
+                                                </li>
+                                                <li><a tabindex="-1" href="javascript:void(0)"
+                                                       data-field="cat_name">栏目</a></li>
+                                            </ul>
+                                        </div>
+                                        <input type="text" class="form-control" value="" name="keyword"
+                                               placeholder="请输入名称">
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="card-body">
+
+                                <div class="table-responsive">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                        <tr>
+                                            <th>论文Id</th>
+                                            <th>标题</th>
+                                            <th>内容简介</th>
+                                            <th>作者</th>
+                                            <th>发表时间</th>
+                                            <th>指导老师</th>
+                                            <th>状态</th>
+                                            <th>操作</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+
+                                        <tr th:if="${audit.statu==0}" th:each="audit:${pageinfo.list}">
+                                            <td th:text="${audit.id}"></td>
+                                            <td th:text="${audit.title}"></td>
+                                            <td th:text="${audit.intro}"></td>
+                                            <td th:text="${audit.username}"></td>
+                                            <td th:text="${audit.createtime}"></td>
+                                            <td th:text="${audit.teacherName}"></td>
+                                            <td><font class="text-success"  th:text="${audit.statu==0?'待申报':'不知'}"></font></td>
+                                            <td>
+                                                <div class="btn-group" id="All">
+                                                    <a class="btn btn-xs btn-default" th:href="@{'/manager/gotoAuditGraduate?id='+${audit.id}+'&userid='+${audit.userid}}"   title="查看"
+                                                       data-toggle="tooltip"><i class="mdi mdi-pencil"></i></a>
+                                                    <a class="btn btn-xs btn-default " name="accessClick" th:attr="temp=${audit.id}"  th title="申报审核通过"
+                                                       data-toggle="tooltip"><i class="mdi mdi-window-open"></i></a>
+                                                    <a class="btn btn-xs btn-default " name="deleteClick" th:attr="temp=${audit.id}"  title="申报审核不通过"
+                                                       data-toggle="tooltip"><i class="mdi mdi-window-close"></i></a>
+
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <ul class="pagination">
+                                    <li class="disabled"><span>«</span></li>
+                                    <li class="active"><span>1</span></li>
+                                    <li><a href="#1">2</a></li>
+                                    <li><a href="#1">3</a></li>
+                                    <li><a href="#1">4</a></li>
+                                    <li><a href="#1">5</a></li>
+                                    <li><a href="#1">6</a></li>
+                                    <li><a href="#1">7</a></li>
+                                    <li><a href="#1">8</a></li>
+                                    <li class="disabled"><span>...</span></li>
+                                    <li><a href="#!">14452</a></li>
+                                    <li><a href="#!">14453</a></li>
+                                    <li><a href="#!">»</a></li>
+                                </ul>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </main>
+        <!--End 页面主要内容-->
+    </div>
+</div>
+
+<script type="text/javascript" src="/houduan/js/jquery.min.js"></script>
+<script type="text/javascript" src="/houduan/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/houduan/js/perfect-scrollbar.min.js"></script>
+<script type="text/javascript" src="/houduan/js/main.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $('.search-bar .dropdown-menu a').click(function () {
+            var field = $(this).data('field') || '';
+            $('#search-field').val(field);
+            $('#search-btn').html($(this).text() + ' <span class="caret"></span>');
+        });
+    });
+    var userid = $("#userid").attr("temp");
+    $("#gotoUserinfo").click(function () {
+        location.href = "/user/userinfo?id=" + userid;
+    })
+
+    $("#loginout").click(function () {
+        location.href = "/user/loginout";
+    })
+
+
+    $("#All a[name='accessClick']").click(function(){
+        var accessId = $(this).attr("temp");
+        $.ajax({
+            url:"/manager/accessOrdelete?accessId="+accessId,
+            type:"get",
+            success:function(data){
+                console.log(data);
+                if (data.code==200){
+                    $("#All").remove(this);
+                }else{
+                    console.log("审核失败")
+                }
+            }
+        })
+    })
+
+    $("#All a[name='deleteClick']").click(function(){
+        var deleteId = $(this).attr("temp");
+        $.ajax({
+            url:"/manager/accessOrdelete?deleteId="+deleteId,
+            type:"get",
+            success:function(data){
+                console.log(data);
+                if (data.code==200){
+                    console.log("删除成功")
+                }else{
+                    console.log("删除失败")
+                }
+            }
+        })
+    })
+
+</script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xjy.graduateweb.mapper.AllMapper">
+    <insert id="insertUserSee">
+        insert into see(overpaper_id,user_id,issee) values(#{overpaperId},#{userId},1)
+    </insert>
+    <insert id="insertOverpaperById">
+        INSERT INTO overpaper(category,create_id,create_name,create_title,intro,content,createtime,updatetime,grade,teacher_name,image)
+        VALUES(#{category},#{createId},#{createName},#{createTitle},#{intro},#{content},#{createtime},#{updatetime},#{grade},#{teacherName},#{image})
+    </insert>
+    <insert id="insertOverpaperToAudit">
+        insert into audit(category,userid,username,title,intro,content,createtime,teacher_name,teacher_id,image)
+        values (#{category},#{createId},#{createName},#{createTitle},#{intro},#{content},#{createtime},#{teacherName},#{teacherId},#{image})
+    </insert>
+    <update id="updateStatuByAuditId">
+        UPDATE audit SET statu=#{statu} WHERE id=#{id}
+    </update>
+    <delete id="deleteAuditById">
+        delete from audit where id=#{id}
+    </delete>
+
+    <!-- 通用查询结果列 -->
+    <select id="selectByCategory" resultType="com.xjy.graduateweb.bean.OverPaper">
+         select * from overpaper where category=#{category}
+    </select>
+    <select id="selectOverpaperbyId" resultType="com.xjy.graduateweb.bean.OverPaper">
+        SELECT * FROM overpaper  WHERE id=#{id}
+    </select>
+    <select id="selectIsSee" resultType="com.xjy.graduateweb.bean.See">
+        SELECT * FROM see WHERE overpaper_id=#{overpaperId} AND user_id=#{userId}
+    </select>
+    <select id="selectAllPaperSumSee" resultType="java.lang.Integer">
+        SELECT COUNT(*) FROM see WHERE overpaper_id=#{overpaperId} AND issee=1
+    </select>
+    <select id="selectUserByPaperId" resultType="com.xjy.graduateweb.bean.User">
+        SELECT u.* FROM overpaper o LEFT JOIN `user` u ON u.id = o.create_id WHERE o.create_id =#{createId} AND o.id=#{paperId}
+    </select>
+    <select id="selectIsVisibleByUserId" resultType="com.xjy.graduateweb.bean.IsVisible">
+        SELECT i.* FROM overpaper o LEFT JOIN `user` u ON o.create_id = u.id
+        LEFT JOIN isvisible i ON u.id = i.userid WHERE o.create_id=#{createId} AND u.id =#{userId} GROUP BY i.userid
+    </select>
+    <select id="selectAll" resultType="com.xjy.graduateweb.bean.OverPaper">
+        select * from overpaper
+    </select>
+    <select id="selectNoAudit" resultType="com.xjy.graduateweb.bean.Audit">
+        select * from audit
+    </select>
+    <select id="selectUserByAudit" resultType="com.xjy.graduateweb.bean.User">
+        SELECT u.* FROM USER u LEFT JOIN audit a ON a.userid=u.id WHERE u.id=#{id}
+    </select>
+    <select id="selectUserByAuditIdAndUserId" resultType="com.xjy.graduateweb.bean.User">
+                SELECT u.* FROM audit a LEFT JOIN `user` u ON u.id = a.userid WHERE a.id =#{auditId} AND u.id=#{userid}
+    </select>
+    <select id="NewselectIsVisibleByUserId" resultType="com.xjy.graduateweb.bean.IsVisible">
+        SELECT i.* FROM isvisible i LEFT JOIN `user` u ON u.id=i.userid WHERE u.id=#{id}
+    </select>
+    <select id="selectAuditById" resultType="com.xjy.graduateweb.bean.Audit">
+        select * from audit where id=#{id}
+    </select>
+    <select id="selectParentMenu" resultType="com.xjy.graduateweb.bean.Menu">
+        select * from menu where pid=0
+    </select>
+    <select id="selectSecondMenu" resultType="com.xjy.graduateweb.bean.Menu">
+        select * from menu where pid=#{parentId}
+    </select>
+    <select id="selectTeacherNameByOverpaperTeacherId" resultType="com.xjy.graduateweb.bean.Teacher">
+        select * from teacher where teacher_id=#{teacherId}
+    </select>
+    <select id="selectTeacherAuditByUserId" resultType="com.xjy.graduateweb.bean.Teacher">
+        SELECT t.* FROM USER u LEFT JOIN user_teacher ut ON ut.user_id=u.id
+        LEFT JOIN teacher t ON ut.teacher_id = t.`teacher_id` WHERE u.id=#{userId}
+    </select>
+    <select id="selectAuditByTeacherIdAndName" resultType="com.xjy.graduateweb.bean.Audit">
+        SELECT a.* FROM audit a LEFT JOIN teacher t ON t.teacher_id = a.teacher_id
+        WHERE t.teacher_id=#{teacherId} AND a.teacher_name=#{teacherName} AND statu=#{num}
+    </select>
+
+</mapper>

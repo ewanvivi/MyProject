@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+
+    <link rel="stylesheet" href="/portal/vendor/bootstrap/css/bootstrap.min.css">
+    <link href="/portal/vendor/fonts/circular-std/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="/portal/libs/css/style.css">
+    <link rel="stylesheet" href="/portal/vendor/fonts/fontawesome/css/fontawesome-all.css">
+    <link rel="stylesheet" href="/portal/vendor/fonts/material-design-iconic-font/css/materialdesignicons.min.css">
+    <title>项目</title>
+</head>
+
+<body>
+    <!-- ============================================================== -->
+    <!-- main wrapper -->
+    <!-- ============================================================== -->
+    <div class="dashboard-main-wrapper">
+         <!-- ============================================================== -->
+        <!-- navbar -->
+        <!-- ============================================================== -->
+         <div class="dashboard-header">
+            <nav class="navbar navbar-expand-lg bg-white fixed-top">
+                <a class="navbar-brand" href="/homepage">湖南劳动人事职业学院毕业论文</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto navbar-right-top">
+                        <li class="nav-item dropdown notification">
+                            <a class="nav-link  nav-icons"  href="#" id="navbarDropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-fw fa-bell"></i> <span class="indicator"></span></a>
+                            <ul class="dropdown-menu dropdown-menu-right notification-dropdown">
+                                <li>
+                                    <div class="notification-title"> Notification</div>
+                                    <div class="notification-list">
+                                        <div class="list-group">
+                                            <a href="#" class="list-group-item list-group-item-action active">
+                                                <div class="notification-info">
+                                                    <div class="notification-list-user-img"><img src="portal/images/avatar-2.jpg" alt="" class="user-avatar-md rounded-circle"></div>
+                                                    <div class="notification-list-user-block"><span class="notification-list-user-name">Jeremy Rakestraw</span>accepted your invitation to join the team.
+                                                        <div class="notification-date">2 min ago</div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <a href="#" class="list-group-item list-group-item-action">
+                                                <div class="notification-info">
+                                                    <div class="notification-list-user-img"><img src="portal/images/avatar-3.jpg" alt="" class="user-avatar-md rounded-circle"></div>
+                                                    <div class="notification-list-user-block"><span class="notification-list-user-name">John Abraham</span>is now following you
+                                                        <div class="notification-date">2 days ago</div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <a href="#" class="list-group-item list-group-item-action">
+                                                <div class="notification-info">
+                                                    <div class="notification-list-user-img"><img src="portal/images/avatar-4.jpg" alt="" class="user-avatar-md rounded-circle"></div>
+                                                    <div class="notification-list-user-block"><span class="notification-list-user-name">Monaan Pechi</span> is watching your main repository
+                                                        <div class="notification-date">2 min ago</div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <a href="#" class="list-group-item list-group-item-action">
+                                                <div class="notification-info">
+                                                    <div class="notification-list-user-img"><img src="portal/images/avatar-5.jpg" alt="" class="user-avatar-md rounded-circle"></div>
+                                                    <div class="notification-list-user-block"><span class="notification-list-user-name">Jessica Caruso</span>accepted your invitation to join the team.
+                                                        <div class="notification-date">2 min ago</div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="list-footer"> <a href="#">View all notifications</a></div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown nav-user">
+                            <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img th:if="${session.user!=null}" th:src="${session.user.image}" alt="" class="user-avatar-md rounded-circle"></a>
+                                <img th:if="${session.user==null}" src="portal/images/my.jpg" alt="" class="user-avatar-md rounded-circle"></a>
+                            <div th:if="${session.user!=null}" class="dropdown-menu dropdown-menu-right nav-user-dropdown" aria-labelledby="navbarDropdownMenuLink2">
+                                <input type="hidden" id="hiddenUserId" th:value="${session.user.id}">
+                                <a class="dropdown-item"  id="slef"><i class="fas fa-user mr-2"></i>个人信息</a>
+                                <a th:if="${session.user.statu==1}" href="/manager/info" class="dropdown-item"  id="manager"><i class="fas fa-user mr-2"></i>管理页面</a>
+                                <a class="dropdown-item" href="/user/loginout" id="loginout" ><i class="fas fa-power-off mr-2"></i>退出登陆</a>
+
+                            </div>
+                            <div th:if="${session.user==null}" class="dropdown-menu dropdown-menu-right nav-user-dropdown" aria-labelledby="navbarDropdownMenuLink2">
+                                <a class="dropdown-item" id="login"><i class="fas fa-user mr-2"></i>前去登陆</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <!-- ============================================================== -->
+        <!-- end navbar -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- left sidebar -->
+        <!-- ============================================================== -->
+        <div class="nav-left-sidebar sidebar-dark">
+            <div class="menu-list">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <a class="d-xl-none d-lg-none" href="#">Dashboard</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+
+                    <!-- menu -->
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav flex-column">
+                            <li class="nav-item">
+                                <a class="nav-link" id="quality"  data-toggle="collapse" aria-expanded="false" data-target="#submenu-7" aria-controls="submenu-7"><i class="fas fa-fw fa-inbox"></i>质量检测系 <span class="badge badge-secondary">New</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="shangmao"  data-toggle="collapse" aria-expanded="false" data-target="#submenu-7" aria-controls="submenu-7"><i class="fas fa-fw fa-inbox"></i>商贸旅游系 <span class="badge badge-secondary">New</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="jidian"  data-toggle="collapse" aria-expanded="false" data-target="#submenu-7" aria-controls="submenu-7"><i class="fas fa-fw fa-inbox"></i>机电工程系 <span class="badge badge-secondary">New</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="renli"  data-toggle="collapse" aria-expanded="false" data-target="#submenu-7" aria-controls="submenu-7"><i class="fas fa-fw fa-inbox"></i>人力资源和社会保障系 <span class="badge badge-secondary">New</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- end left sidebar -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- wrapper  -->
+        <!-- ============================================================== -->
+        <div class="dashboard-wrapper">
+            <div class="container-fluid">
+                <aside class="page-aside">
+                    <div class="aside-content">
+                        <div class="aside-header">
+                            <button class="navbar-toggle" data-target=".aside-nav" data-toggle="collapse" type="button"><span class="icon"><i class="fas fa-caret-down"></i></span></button><span class="title">毕业论文服务</span>
+                            <p class="description">仅供参考</p>
+                        </div>
+                        <div class="aside-nav collapse">
+                            <!-- 二级菜单 -->
+                            <ul class="nav" id="secondarymenu">
+<!--                                <li class="active"><a href="/all/major?majorId=item.id" id=""><span class="icon"><i class="fas fa-fw fa-inbox"></i></span>Java</a></li>-->
+<!--                                <li><a href="#"><span class="icon"><i class="fas fa-fw  fa-envelope"></i></span>BigData</a></li>-->
+
+                                <!-- <li><a href="#"><span class="icon"><i class="fas fa-fw fa-briefcase"></i></span>Important<span class="badge badge-secondary float-right">4</span></a></li>-->
+                            </ul>
+<!--                           <span class="title">牛逼论文系列</span> <ul class="nav nav-pills nav-stacked">-->
+<!--                                <li><a href="#"><i class="m-r-10 mdi mdi-label text-secondary"></i>-->
+<!--                                    Important </a></li>-->
+<!--                                <li><a href="#">-->
+<!--                                   <i class="m-r-10 mdi mdi-label text-primary"></i> Business   </a></li>-->
+<!--                                <li><a href="#"> <i class="m-r-10 mdi mdi-label text-brand"></i>-->
+<!--                                   Inspiration </a></li>-->
+<!--                            </ul>-->
+                        </div>
+                    </div>
+                </aside>
+                <div class="main-content container-fluid p-0">
+                    <div class="email-inbox-header" style="border-bottom:1px solid #e6e6f2">
+                        <div class="row">
+                            <div class="col-lg-2">
+                                <div  id="categoryTitle" class="email-title"><span class="icon"><i class="fas fa-inbox"></i></span>欢迎<span class="new-messages"></span> </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div  class="email-title"><span class="icon"><i class="fas fa-inbox"></i></span><a id="gotoWriteGraduate" href="#">撰写论文</a><span class="new-messages"></span> </div>
+                            </div>
+                            <div class="col-lg-3"><span class="email-pagination-indicator">当前页1</span><span class="email-pagination-indicator">总页数20</span>
+                                <div class="btn-group email-pagination-nav">
+                                    <button class="btn btn-light" id="previous"  type="button"><i class="fas fa-angle-left"></i></button>
+                                    <button class="btn btn-light" id="next" type="button"><i class="fas fa-angle-right"></i></button>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="email-search">
+                                    <div class="input-group input-search">
+                                        <input class="form-control" type="text" placeholder="搜索"><span class="input-group-btn">
+                                       <button class="btn btn-secondary" type="button"><i class="fas fa-search"></i></button></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 论文列表 -->
+                    <div class="email-list" id="gategoryAll">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- end main wrapper -->
+    <!-- ============================================================== -->
+    <!-- Optional JavaScript -->
+    <script src="/portal/vendor/jquery/jquery-3.3.1.min.js"></script>
+    <script src="/portal/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="/portal/vendor/slimscroll/jquery.slimscroll.js"></script>
+    <script src="/portal/libs/js/main-js.js"></script>
+    <script>
+    $(document).ready(function() {
+
+
+
+        // binding the check all box to onClick event
+        $(".chk_all").click(function() {
+
+            var checkAll = $(".chk_all").prop('checked');
+            if (checkAll) {
+                $(".checkboxes").prop("checked", true);
+            } else {
+                $(".checkboxes").prop("checked", false);
+            }
+
+        });
+
+        // if all checkboxes are selected, then checked the main checkbox class and vise versa
+        $(".checkboxes").click(function() {
+
+            if ($(".checkboxes").length == $(".subscheked:checked").length) {
+                $(".chk_all").attr("checked", "checked");
+            } else {
+                $(".chk_all").removeAttr("checked");
+            }
+
+        });
+
+    });
+
+    //===================================================================================================================================================
+
+    //===================================================================================================================================================
+
+    //前去撰写论文(判断是否登陆)
+    $("#gotoWriteGraduate").click(function(){
+        $.ajax({
+            url:"/gotoWrite",
+            type:"get",
+            success:function(data){
+                if (data.code==200){
+                    location.href="/gotowriteGraduate";
+                }else{
+                    alert("请登陆");
+                    return;
+                }
+            }
+        })
+    })
+
+
+    //去指定的论文主题中
+    $("body").on("click",".selectGraduation",function(){
+        var id = $(this).attr("id");
+        location.href="/all/selectGraduationById?id="+id;
+    });
+
+    //===================================================================================================================================================
+
+    //查看自己信息
+    $("#slef").click(function(){
+        var id = $("#hiddenUserId").val();
+        location.href="/user/userinfo?id="+id;
+
+    });
+
+
+    //前去登陆
+    $("#login").click(function(){
+        location.href="/user/gotoLogin";
+    });
+
+
+    //===================================================================================================================================================
+    var pn=2;
+    //获取二级菜单
+    $("body").on("click",".gategoryMajor",function(){
+        var category = $(this).text();
+        $("#gategoryAll div").remove();
+       $.ajax({
+           url:"/all/major?category="+category,
+           type:"get",
+           success:function(data){
+               console.log(data);
+               var list = data.list;
+               $.each(list,function(index,item){
+                       var tempAll=" <div class=\"email-list-item\">\n" +
+                           "        <div class=\"email-list-actions\">\n" +
+                           "            <img style=\"width: 57px;height: 57px;\" src=\""+item.image+"\" >\n" +
+                           "        </div>\n" +
+                           "       <div class=\"email-list-detail selectGraduation\" id=\'"+item.id+"\'><span class=\"date float-right\"></span><span class=\"date float-right\"><span class=\"icon\"><i class=\"fas fa-eye\"></i></span> "+item.sumSee+"</span><span class=\"from\">"+item.createTitle+"</span>\n" +
+                           "                                <p class=\"msg\">"+item.intro+"</p>\n" +
+                           "                            </div>\n" +
+                           "    </div>"
+                       $("#gategoryAll").append(tempAll);
+               })
+
+           }
+       })
+    });
+
+
+    $("#quality").click(function(){
+        $.ajax({
+            url:"/quality/secondarymenu?pid=1",
+            type:"get",
+            success:function(data){
+                $("#secondarymenu li").remove();
+                $.each(data,function (index,item) {
+                    var str="<li class=\"active\"><a class=\'gategoryMajor\' id=\'"+item.name+"\'><span class=\"icon\"><i class=\"fas fa-fw fa-inbox\"></i></span>"+item.name+"</a></li>";
+                    $("#secondarymenu").append(str);
+                })
+            }
+        })
+    });
+
+    $("#shangmao").click(function(){
+        $.ajax({
+            url:"/quality/secondarymenu?pid=2",
+            type:"get",
+            success:function(data){
+                $("#secondarymenu li").remove();
+                $.each(data,function (index,item) {
+                    var str="<li class=\"active\"><a class=\'gategoryMajor\' id=\'"+item.name+"\'><span class=\"icon\"><i class=\"fas fa-fw fa-inbox\"></i></span>"+item.name+"</a></li>";
+                    $("#secondarymenu").append(str);
+                })
+
+            }
+        })
+    });
+
+    $("#jidian").click(function(){
+        $.ajax({
+            url:"/quality/secondarymenu?pid=3",
+            type:"get",
+            success:function(data){
+                $("#secondarymenu li").remove();
+                $.each(data,function (index,item) {
+                    var str="<li class=\"active\"><a class=\'gategoryMajor\' id=\'"+item.name+"\'><span class=\"icon\"><i class=\"fas fa-fw fa-inbox\"></i></span>"+item.name+"</a></li>";
+                    $("#secondarymenu").append(str);
+                })
+
+            }
+        })
+    });
+
+    $("#renli").click(function(){
+        $.ajax({
+            url:"/quality/secondarymenu?pid=4",
+            type:"get",
+            success:function(data){
+                $("#secondarymenu li").remove();
+                $.each(data,function (index,item) {
+                    var str="<li class=\"active\"><a class=\'gategoryMajor\' id=\'"+item.name+"\'><i class=\"fas fa-fw fa-inbox\"></i></span>"+item.name+"</a></li>";
+                    $("#secondarymenu").append(str);
+                })
+
+            }
+        })
+    });
+
+
+    </script>
+</body>
+
+</html>
